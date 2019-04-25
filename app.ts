@@ -1,7 +1,12 @@
-import express from "express";
+import express from 'express';
+import { mongo, data } from './server-utils';
 
 const app = express();
 
-app.listen(8080, () => {
-console.log('Express is running...')
+mongo(app);
+data(app);
+// serverUtils.market(app);
+
+app.listen(80, () => {
+    console.log('Data Bee');
 })
